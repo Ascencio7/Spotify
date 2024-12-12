@@ -13,7 +13,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     overflow-x: hidden;
-    font-family: "Gotham SSm A", "Gotham SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     max-height: 100vh;
     height: 100vh;
     overflow-y: hidden;
@@ -171,11 +171,12 @@ body {
     padding: 0 10px;
 }
 
-
+/*Aqui es el color de fondo de la portada del albúm*/
 .playlist-header {
-background: rgb(255,255,255);
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(119,119,119,1) 100%);
+    background: rgb(255,255,255); /* Por compatibilidad, puedes dejarlo */
+    background: linear-gradient(180deg, #2c7c33 0%, #11931f 100%);
 }
+
 
 .playlist-content {
     display: flex;
@@ -308,17 +309,15 @@ background: linear-gradient(180deg, rgba(95,95,95,1) 0%, rgba(18,18,18,1) 22%, r
     border-bottom: 1px solid #CACACA;
 }
 
-.playlist-songs table th {
+.playlist-songs table tr th {
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: none; /* Cambia de 'uppercase' a 'none' */
+    font-weight: 200;
+    letter-spacing: 10px;
     text-align: left;
 }
 
-.playlist-songs table tr th:first-child{
-    width: 2%;
-}
-
-.playlist-songs table tr th:nth-child(2) {
-    width: 40%;
-}
 
 .song-image img {
     width: 34px;
@@ -445,4 +444,20 @@ background: linear-gradient(180deg, rgba(95,95,95,1) 0%, rgba(18,18,18,1) 22%, r
 .footer-player-right-buttons img {
     margin-right: 20px;
     width: 16px;
+}
+
+.playlist-songs-container {
+    height: calc(100vh - 350px); /* Ajusta según tu diseño */
+    overflow-y: auto;
+    scrollbar-width: thin; /* Scroll personalizado para Firefox */
+    scrollbar-color: var(--spotify-green) transparent;
+}
+
+.playlist-songs-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.playlist-songs-container::-webkit-scrollbar-thumb {
+    background-color: var(--spotify-green);
+    border-radius: 10px;
 }
